@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Top News Website</title>
+</head>
+<body>
+    <h1>{{message}}</h1>
+    <div class="news-container">
+        {% for news in data %}
+            <div class="article">
+                <h2>{{news['title']}}</h2>
+                <p>{{news['description']}}</p>
+                <p><a href="{{ news['url'] }}" target="_blank">Read more</a></p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
