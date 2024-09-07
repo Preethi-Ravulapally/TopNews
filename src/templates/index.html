@@ -6,14 +6,20 @@
 </head>
 <body>
     <h1>{{message}}</h1>
-    <div class="news-container">
-        {% for news in data %}
-            <div class="article">
-                <h2>{{news['title']}}</h2>
-                <p>{{news['description']}}</p>
-                <p><a href="{{ news['url'] }}" target="_blank">Read more</a></p>
-            </div>
-        {% endfor %}
-    </div>
+    <form method="post" action="/TopNews" >
+        <div class="select">
+            <label for="category">category: </label>
+            <span class="select__flag" aria-hidden="true"></span>
+            <select id="category" name="category" class="category-class" onchange="this.form.submit()">
+                <option value="0">Select option</option>
+                <option value="business">Business</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="health">Health</option>
+                <option value="science">Science</option>
+                <option value="sports">Sports</option>
+                <option value="technology">Technology</option>
+            </select>
+        </div>
+    </form>
 </body>
 </html>
