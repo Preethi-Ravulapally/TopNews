@@ -1,0 +1,27 @@
+.select__flag {
+  display: inline-block;
+  position: absolute;
+  /* Center both icons vertically */
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--select-icon-size);
+  height: var(--select-icon-size);
+  pointer-events: none;
+}
+
+.select__flag {
+  left: var(--select-icon-margin);
+}
+.select__flag {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: var(--select-icon-size);
+  /* Default world icon as SVG dataURI */
+  background-image: url("data:image/svg...");
+}
+.select:has(option[value="IT"]) {}
+.select:has(option[value="IT"]:checked) {}
+.select:has(option[value="IT"]:checked) .select__flag {
+  /* SVG Italian flag via dataURI  */
+  background-image: url("data:image/svg...");
+}

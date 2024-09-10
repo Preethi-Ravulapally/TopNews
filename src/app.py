@@ -10,20 +10,19 @@ url = "https://newsapi.org/v2/top-headlines"
 
 @app.route('/')
 def hello():
-    # data = gettopnews()
     return render_template('index.html', message="Top Head Lines")
 
 @app.route('/TopNews', methods=['POST', 'GET'])
 def getnews():
-    category = request.form.get('country')
+    category = request.form.get('category')
     data = gettopnews(category)
-    return render_template('showNews.html', message="Top Head Lines", data=data)
+    return render_template('showNews.html', message=category, data=data)
 
 def gettopnews(category):
     params = {
-        'country': 'us',  # You can change to other country codes like 'gb' for UK
-        'apiKey': api_key,
-        'category': category
+        'country': 'us',
+        'category': category,
+        'apiKey': api_key
     }
     response = requests.get(url, params=params)
 
